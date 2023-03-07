@@ -22,7 +22,7 @@ export const storage = getStorage(app)
 
 // Get profile picture
 export async function getProfilePic(currentUser, setLoading){
-  const profilePictureRef = ref(storage, `/ProfilePics/${currentUser?.uid}.png`);
+  const profilePictureRef = ref(storage, `/ProfilePics/${currentUser?.uid}.png`)
   const profilePictureUrl = await getDownloadURL(profilePictureRef)
   setLoading(false)
   return profilePictureUrl
